@@ -49,10 +49,11 @@
                 %td
                   %strong{data:{header: 'Course start'}}
                     = intake.start_date.strftime('%-d %b %Y')
-                    %br
-                      %small
-                        Prep course starts 
-                        = intake.precourse_start_date.strftime('%-d %b %Y')
+                    - if intake.precourse_start_date 
+                      %br
+                        %small
+                          Prep course starts 
+                          = intake.precourse_start_date.strftime('%-d %b %Y')
                 %td{data:{header: 'Graduation'}}= intake.end_date.strftime('%-d %B %Y')
                 %td{data:{header: 'Locations'}}= intake.locations
     .row
