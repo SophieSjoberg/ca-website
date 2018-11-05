@@ -37,13 +37,14 @@
                 %td{data:{header: 'Program'}}= intake.course_name
                 %td{data:{header: 'Kursstart'}}
                   = intake.start_date.strftime('%-d %b %Y')
-                  %br
-                    %small
-                      Förberedande kurs startar 
-                      = intake.precourse_start_date.strftime('%-d %b %Y')
+                  - if intake.precourse_start_date 
+                    %br
+                      %small
+                        Förberedande kurs startar 
+                        = intake.precourse_start_date.strftime('%-d %b %Y') 
                 %td{data:{header: 'Examen'}}= intake.end_date.strftime('%-d %b %Y')
                 %td{data:{header: 'Plats'}}= intake.locations
-              -else
+              - else
                 %td{data:{header: 'Program'}}= intake.course_name
                 %td
                   %strong{data:{header: 'Course start'}}

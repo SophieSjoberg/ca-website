@@ -38,8 +38,7 @@ class Intake
   end
 
   def precourse_start_date
-    return Date.parse(dates['precourse_start_date']) if dates['precourse_start_date']
-    start_date - PRECOURSE_LENGTH
+    Date.parse(dates['precourse_start_date']) if dates['precourse_start_date']
   end
 
   def in_future?
